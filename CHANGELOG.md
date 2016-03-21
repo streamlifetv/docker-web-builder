@@ -1,3 +1,7 @@
+## 1.1.1 (2016-03-21)
+
+* fixed: create docker image latest tag to enable push to docker hub
+
 ## 1.1.0 (2016-03-21)
 
 * base on `dind` image to be able to build docker images
