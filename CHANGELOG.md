@@ -1,3 +1,7 @@
+## 1.1.2 (2016-03-21)
+
+* fallback to docker 1.9.1 to be compatible to current codeship docker server version
+
 ## 1.1.1 (2016-03-21)
 
 * fixed: create docker image latest tag to enable push to docker hub
