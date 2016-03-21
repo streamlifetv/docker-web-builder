@@ -9,6 +9,7 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * [nodejs](https://nodejs.org/) -  JavaScript server runtime
 * [npm](https://www.npmjs.com/) - npm is the package manager for Node.js
 * [grunt](http://gruntjs.com/) - JavaScript task runner
+* openjdk8 and [maven](https://maven.apache.org/) to build Java projects
 
 ## build tools versions
 * php - `5.5.33`
@@ -17,6 +18,21 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * nodejs - `v4.4.0`
 * npm - `2.14.20`
 * grunt - `v0.1.13`
+* java - `1.8.0_72-internal`
+* maven - `3.0.5`
+
+## docker in docker
+The image is also based on `dind` so you can build docker images and add them to the local codeship docker repository.
+
+Now you can push your built image to a remote repository (step added in `codeship-steps.yml` for Docker-Hub):
+```yaml
+- name:    push_step
+  service: build
+  type:    push
+  image_name: myuser/myapp
+  registry: https://index.docker.io/v1/
+  encrypted_dockercfg_path: dockercfg.enc
+```
 
 ## usage to build PHP project on codeship
 Example `codeship-services.yml`:
