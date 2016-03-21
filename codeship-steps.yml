@@ -5,7 +5,7 @@
 
 - name: tag_step
   service: app
-  command: docker tag bitmovin/web-builder:1.1.0 bitmovin/web-builder:latest
+  command: docker tag bitmovin/web-builder:1.1.1 bitmovin/web-builder:latest
   tag: master
 
 - name: docker_push
