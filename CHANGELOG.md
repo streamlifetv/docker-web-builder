@@ -1,3 +1,7 @@
+## 1.1.3 (2016-03-21)
+
+* refactor codeship steps to push latest and version tag run codeship build only on version tag
+
 ## 1.1.2 (2016-03-21)
 
 * fallback to docker 1.9.1 to be compatible to current codeship docker server version
