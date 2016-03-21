@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM jpetazzo/dind
 
 MAINTAINER Martin Fillafer <martin.fillafer@bitmovin.com>
 
@@ -10,13 +10,13 @@ ENV DEBIAN_FRONTEND="noninteractive" \
     LANG="en_US.UTF-8"
 
 # install build basics
-RUN apt-get -y update && \
-    apt-get -y upgrade && \
-    apt-get -y install build-essential software-properties-common python-pip curl wget git
+RUN apt-get update -qq && \
+    apt-get upgrade -qqy && \
+    apt-get install -qqy --no-install-recommends build-essential software-properties-common python-pip curl wget git
 
 # install php5 and composer
-RUN apt-add-repository -y ppa:ondrej/php5 && apt-get update && \
-    apt-get -y install php5 php5-curl php5-cli && \
+RUN apt-add-repository -y ppa:ondrej/php5 && apt-get update -qq && \
+    apt-get install -qqy --no-install-recommends php5 php5-curl php5-cli && \
     curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 
 # install envtpl
@@ -24,12 +24,17 @@ RUN pip install --no-input -q envtpl
 
 # install nodejs, npm and grunt
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
-    apt-get -y update && \
-    apt-get install -y nodejs libfontconfig && \
+    apt-get update -qq && \
+    apt-get install -qqy --no-install-recommends nodejs libfontconfig && \
     npm install grunt-cli -g
 
+# install OpenJDK 8 and maven
+RUN add-apt-repository -y ppa:openjdk-r/ppa && \
+    apt-get update -qq && \
+    apt-get install -qqy --no-install-recommends openjdk-8-jdk maven
+
 # APT cleanup
-RUN apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # add github.com as host
 RUN mkdir -p ~/.ssh && ssh-keyscan -H github.com >> ~/.ssh/known_hosts
