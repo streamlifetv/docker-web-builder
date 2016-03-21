@@ -1,6 +1,7 @@
 - name: docker_build
   service: app
   command: true
+  tag: master
 
 - name: docker_push
   service: app
@@ -8,3 +9,4 @@
   image_name: bitmovin/web-builder
   registry: https://index.docker.io/v1/
   encrypted_dockercfg_path: dockercfg.enc
+  tag: master
