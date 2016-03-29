@@ -57,12 +57,12 @@ Example `codeship-steps.yml`:
 
 ## caching build tool repositories
 * reuse composer cache
-    ```yaml
-    volumes:
-      - /tmp/composer-cache:/root/.composer/cache
-    ```
+```yaml
+volumes:
+  - /tmp/composer-cache:/root/.composer/cache
+```
 * reuse maven and activator cache
-    ```yaml
-    volumes:
-      - /tmp/ivy2-cache:/root/.ivy2/cache
-    ```
+```yaml
+volumes:
+  - /tmp/ivy2-cache:/root/.ivy2/cache
+```
