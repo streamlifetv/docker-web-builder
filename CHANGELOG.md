@@ -1,3 +1,7 @@
+## 1.2.0 (2016-04-06)
+
+* add Ruby 2.0 and SASS for grunt-contrib-sass
+
 ## 1.1.3 (2016-03-21)
 
 * refactor codeship steps to push latest and version tag run codeship build only on version tag

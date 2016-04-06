@@ -10,6 +10,7 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * [npm](https://www.npmjs.com/) - npm is the package manager for Node.js
 * [grunt](http://gruntjs.com/) - JavaScript task runner
 * openjdk8 and [maven](https://maven.apache.org/) to build Java projects
+* [ruby](http://www.ruby-lang.org/) and [sass](http://sass-lang.com/) gem
 
 ## build tools versions
 * php - `5.5.33`
@@ -20,6 +21,8 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * grunt - `v0.1.13`
 * java - `1.8.0_72-internal`
 * maven - `3.0.5`
+* ruby - `2.0.0p384`
+* sass - `3.4.22`
 
 ## docker in docker
 The image is also based on `dind` so you can build docker images and add them to the local codeship docker repository.
