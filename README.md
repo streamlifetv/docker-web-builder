@@ -9,7 +9,9 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * [nodejs](https://nodejs.org/) -  JavaScript server runtime
 * [npm](https://www.npmjs.com/) - npm is the package manager for Node.js
 * [grunt](http://gruntjs.com/) - JavaScript task runner
+* [bower](http://bower.io/) - a package manager for the web
 * openjdk8 and [maven](https://maven.apache.org/) to build Java projects
+* [ruby](http://www.ruby-lang.org/) and [sass](http://sass-lang.com/) gem
 
 ## build tools versions
 * php - `5.5.33`
@@ -18,8 +20,11 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * nodejs - `v4.4.0`
 * npm - `2.14.20`
 * grunt - `v0.1.13`
+* bower - `1.7.9`
 * java - `1.8.0_72-internal`
 * maven - `3.0.5`
+* ruby - `2.0.0p384`
+* sass - `3.4.22`
 
 ## docker in docker
 The image is also based on `dind` so you can build docker images and add them to the local codeship docker repository.
@@ -57,12 +62,12 @@ Example `codeship-steps.yml`:
 
 ## caching build tool repositories
 * reuse composer cache
-    ```yaml
-    volumes:
-      - /tmp/composer-cache:/root/.composer/cache
-    ```
+```yaml
+volumes:
+  - /tmp/composer-cache:/root/.composer/cache
+```
 * reuse maven and activator cache
-    ```yaml
-    volumes:
-      - /tmp/ivy2-cache:/root/.ivy2/cache
-    ```
+```yaml
+volumes:
+  - /tmp/ivy2-cache:/root/.ivy2/cache
+```

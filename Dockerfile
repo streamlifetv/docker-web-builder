@@ -22,16 +22,22 @@ RUN apt-add-repository -y ppa:ondrej/php5 && apt-get update -qq && \
 # install envtpl
 RUN pip install --no-input -q envtpl
 
-# install nodejs, npm and grunt
+# install nodejs, npm, grunt and bower
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
     apt-get update -qq && \
     apt-get install -qqy --no-install-recommends nodejs libfontconfig && \
-    npm install grunt-cli -g
+    npm install grunt-cli -g && \
+    npm install bower -g
 
 # install OpenJDK 8 and maven
 RUN add-apt-repository -y ppa:openjdk-r/ppa && \
     apt-get update -qq && \
     apt-get install -qqy --no-install-recommends openjdk-8-jdk maven
+
+# install Ruby 2.0 and SASS for grunt-contrib-sass
+RUN apt-get install -qqy ruby2.0 && \
+    cp /usr/bin/ruby2.0 /usr/bin/ruby && \
+    gem install sass
 
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
