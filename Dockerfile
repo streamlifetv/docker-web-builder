@@ -33,6 +33,11 @@ RUN add-apt-repository -y ppa:openjdk-r/ppa && \
     apt-get update -qq && \
     apt-get install -qqy --no-install-recommends openjdk-8-jdk maven
 
+# install Ruby 2.0 and SASS for grunt-contrib-sass
+RUN apt-get install -qqy ruby2.0 && \
+    cp /usr/bin/ruby2.0 /usr/bin/ruby && \
+    gem install sass
+
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
