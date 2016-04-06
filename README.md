@@ -9,6 +9,7 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * [nodejs](https://nodejs.org/) -  JavaScript server runtime
 * [npm](https://www.npmjs.com/) - npm is the package manager for Node.js
 * [grunt](http://gruntjs.com/) - JavaScript task runner
+* [bower](http://bower.io/) - a package manager for the web
 * openjdk8 and [maven](https://maven.apache.org/) to build Java projects
 * [ruby](http://www.ruby-lang.org/) and [sass](http://sass-lang.com/) gem
 
@@ -19,6 +20,7 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * nodejs - `v4.4.0`
 * npm - `2.14.20`
 * grunt - `v0.1.13`
+* bower - `1.7.9`
 * java - `1.8.0_72-internal`
 * maven - `3.0.5`
 * ruby - `2.0.0p384`

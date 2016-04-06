@@ -22,11 +22,12 @@ RUN apt-add-repository -y ppa:ondrej/php5 && apt-get update -qq && \
 # install envtpl
 RUN pip install --no-input -q envtpl
 
-# install nodejs, npm and grunt
+# install nodejs, npm, grunt and bower
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
     apt-get update -qq && \
     apt-get install -qqy --no-install-recommends nodejs libfontconfig && \
-    npm install grunt-cli -g
+    npm install grunt-cli -g && \
+    npm install bower -g
 
 # install OpenJDK 8 and maven
 RUN add-apt-repository -y ppa:openjdk-r/ppa && \
