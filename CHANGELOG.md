@@ -1,6 +1,10 @@
 ## 1.2.2 (2016-07-06)
 
 * get newest version of the tools
+    * composer - `1.2-dev`
+    * nodejs - `v4.4.7`
+    * npm - `2.15.8`
+    * grunt - `v1.2.0`
 
 ## 1.2.1 (2016-04-06)
 
