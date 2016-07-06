@@ -17,7 +17,8 @@ RUN apt-get update -qq && \
 # install php5 and composer
 RUN apt-add-repository -y ppa:ondrej/php5 && apt-get update -qq && \
     apt-get install -qqy --no-install-recommends php5 php5-curl php5-cli && \
-    curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+    curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && \
+    /usr/local/bin/composer self-update
 
 # install envtpl
 RUN pip install --no-input -q envtpl
