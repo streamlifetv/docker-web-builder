@@ -7,4 +7,9 @@ if [ ! -z ${GITHUB_ACCESS_TOKEN} ]; then
     composer config -g github-oauth.github.com ${GITHUB_ACCESS_TOKEN}
 fi
 
+if [ ! -z ${NPM_AUTH_TOKEN} ]; then
+    # config npm not to run into rate limit
+    echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
+fi
+
 exec "$@"
