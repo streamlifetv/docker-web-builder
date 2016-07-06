@@ -1,3 +1,7 @@
+## 1.2.2 (2016-07-06)
+
+* get newest version of the tools
+
 ## 1.2.1 (2016-04-06)
 
 * add bower command line tool
