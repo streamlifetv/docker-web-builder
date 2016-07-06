@@ -1,3 +1,7 @@
+## 1.2.3 (2016-07-06)
+
+* added npm auth token
+
 ## 1.2.2 (2016-07-06)
 
 * get newest version of the tools
