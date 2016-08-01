@@ -1,3 +1,7 @@
+## 1.2.4 (2016-09-01)
+
+* fixed: set java CLI version to `1.8.0_91`
+
 ## 1.2.3 (2016-07-06)
 
 * added npm auth token

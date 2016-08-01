@@ -33,7 +33,8 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
 # install OpenJDK 8 and maven
 RUN add-apt-repository -y ppa:openjdk-r/ppa && \
     apt-get update -qq && \
-    apt-get install -qqy --no-install-recommends openjdk-8-jdk maven
+    apt-get install -qqy --no-install-recommends openjdk-8-jdk maven && \
+    update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # install Ruby 2.0 and SASS for grunt-contrib-sass
 RUN apt-get install -qqy ruby2.0 && \
