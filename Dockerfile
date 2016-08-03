@@ -41,6 +41,13 @@ RUN apt-get install -qqy ruby2.0 && \
     cp /usr/bin/ruby2.0 /usr/bin/ruby && \
     gem install sass
 
+# install Sonar Scanner
+RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-2.6.1.zip && \
+    unzip -d /usr/lib sonar-scanner-2.6.1.zip && \
+    rm sonar-scanner-2.6.1.zip
+
+ENV PATH $PATH:/usr/lib/sonar-scanner-2.6.1/bin
+
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

@@ -25,6 +25,7 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * maven - `3.0.5`
 * ruby - `2.0.0p384`
 * sass - `3.4.22`
+* sonar-scanner - `2.6.1`
 
 ## docker in docker
 The image is also based on `dind` so you can build docker images and add them to the local codeship docker repository.
