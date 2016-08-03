@@ -15,16 +15,17 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 
 ## build tools versions
 * php - `5.5.33`
-* composer - `1.0-dev`
+* composer - `1.2.0`
 * envtpl - `0.5.0`
-* nodejs - `v4.4.0`
-* npm - `2.14.20`
-* grunt - `v0.1.13`
+* nodejs - `v4.4.7`
+* npm - `2.15.8`
+* grunt - `v1.2.0`
 * bower - `1.7.9`
-* java - `1.8.0_72-internal`
+* java - `1.8.0_91`
 * maven - `3.0.5`
 * ruby - `2.0.0p384`
 * sass - `3.4.22`
+* sonar-scanner - `2.6.1`
 
 ## docker in docker
 The image is also based on `dind` so you can build docker images and add them to the local codeship docker repository.

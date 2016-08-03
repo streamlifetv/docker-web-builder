@@ -1,4 +1,9 @@
-## 1.2.4 (2016-09-01)
+## 1.3.0 (2016-08-03)
+
+* added SonarQube Scanner `2.6.1`
+* fixed some build tools versions in the README.md
+
+## 1.2.4 (2016-08-01)
 
 * fixed: set java CLI version to `1.8.0_91`
 

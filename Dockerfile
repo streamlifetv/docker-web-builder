@@ -41,14 +41,18 @@ RUN apt-get install -qqy ruby2.0 && \
     cp /usr/bin/ruby2.0 /usr/bin/ruby && \
     gem install sass
 
+# install Sonar Scanner
+RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-2.6.1.zip && \
+    unzip -d /usr/lib sonar-scanner-2.6.1.zip && \
+    rm sonar-scanner-2.6.1.zip
+
+ENV PATH $PATH:/usr/lib/sonar-scanner-2.6.1/bin
+
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # add github.com as host
 RUN mkdir -p ~/.ssh && ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-
-# fallback to old docker version for codeship compability
-RUN curl https://get.docker.com/builds/Linux/x86_64/docker-1.9.1 > /usr/bin/docker
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
