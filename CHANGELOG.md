@@ -1,3 +1,7 @@
+## 1.3.2 (2016-12-14)
+
+* changed php ppa from ppa:ondrej/php5 (which seems to not exist anymore) to ppa:ondrej/php
+
 ## 1.3.1 (2016-12-14)
 
 * updated npm from `2.15.8` to `3.10.10`
