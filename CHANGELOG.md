@@ -1,3 +1,7 @@
+## 1.3.3 (2016-12-14)
+
+* split npm installation and update into two steps
+
 ## 1.3.2 (2016-12-14)
 
 * changed php ppa from ppa:ondrej/php5 (which seems to not exist anymore) to ppa:ondrej/php

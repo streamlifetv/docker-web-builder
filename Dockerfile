@@ -23,11 +23,13 @@ RUN apt-add-repository -y ppa:ondrej/php && apt-get update -qq && \
 # install envtpl
 RUN pip install --no-input -q envtpl
 
-# install nodejs, npm, grunt and bower
+# install nodejs and npm
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
     apt-get update -qq && \
-    apt-get install -qqy --no-install-recommends nodejs libfontconfig && \
-    npm install npm@3.10.10 -g
+    apt-get install -qqy --no-install-recommends nodejs libfontconfig
+
+# update npm and install grunt and bower
+RUN npm install npm@3.10.10 -g && \
     npm install grunt-cli -g && \
     npm install bower -g
 
