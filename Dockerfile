@@ -27,6 +27,7 @@ RUN pip install --no-input -q envtpl
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
     apt-get update -qq && \
     apt-get install -qqy --no-install-recommends nodejs libfontconfig && \
+    npm install npm@3.10.10 -g
     npm install grunt-cli -g && \
     npm install bower -g
 
