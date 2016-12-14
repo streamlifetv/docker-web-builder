@@ -18,7 +18,7 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * composer - `1.2.0`
 * envtpl - `0.5.0`
 * nodejs - `v4.4.7`
-* npm - `2.15.8`
+* npm - `3.10.10`
 * grunt - `v1.2.0`
 * bower - `1.7.9`
 * java - `1.8.0_91`

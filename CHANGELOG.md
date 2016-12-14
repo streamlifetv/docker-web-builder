@@ -1,3 +1,7 @@
+## 1.3.1 (2016-12-14)
+
+* updated npm from `2.15.8` to `3.10.10`
+
 ## 1.3.0 (2016-08-03)
 
 * added SonarQube Scanner `2.6.1`
