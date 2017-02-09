@@ -31,7 +31,8 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
 # update npm and install grunt and bower
 RUN npm install npm@3.10.10 -g && \
     npm install grunt-cli -g && \
-    npm install bower -g
+    npm install bower -g && \
+    npm install gulp -g
 
 # install OpenJDK 8 and maven
 RUN add-apt-repository -y ppa:openjdk-r/ppa && \

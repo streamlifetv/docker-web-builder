@@ -1,3 +1,12 @@
+## 1.3.4 (2017-02-09)
+
+* added `gulp` CLI in version `3.9.1`
+* get newest version of the tools
+    * composer - `1.3.2`
+    * nodejs - `v4.7.3`
+    * java - `1.8.0_111`
+    * sass - `3.4.23`
+
 ## 1.3.3 (2016-12-14)
 
 * split npm installation and update into two steps
