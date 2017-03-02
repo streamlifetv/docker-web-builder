@@ -34,10 +34,10 @@ RUN npm install npm@3.10.10 -g && \
     npm install bower -g && \
     npm install gulp -g
 
-# install OpenJDK 8 and maven
+# install OpenJDK 8, maven and ant
 RUN add-apt-repository -y ppa:openjdk-r/ppa && \
     apt-get update -qq && \
-    apt-get install -qqy --no-install-recommends openjdk-8-jdk maven && \
+    apt-get install -qqy --no-install-recommends openjdk-8-jdk maven ant && \
     update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # install Ruby 2.0 and SASS for grunt-contrib-sass
