@@ -1,3 +1,7 @@
+## 1.3.5 (2017-03-02)
+
+* added `ant` in version `1.9.3`
+
 ## 1.3.4 (2017-02-09)
 
 * added `gulp` CLI in version `3.9.1`
