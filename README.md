@@ -28,6 +28,7 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * sonar-scanner - `2.6.1`
 * gulp - `3.9.1`
 * ant - `1.9.3`
+* jq - `1.3`
 
 ## docker in docker
 The image is also based on `dind` so you can build docker images and add them to the local codeship docker repository.

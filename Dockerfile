@@ -52,6 +52,9 @@ RUN wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-sc
 
 ENV PATH $PATH:/usr/lib/sonar-scanner-2.6.1/bin
 
+# install jq (commandline JSON processor)
+RUN apt-get install -qqy --no-install-recommends jq
+
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
