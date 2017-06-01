@@ -1,3 +1,10 @@
+## 1.3.7 (2017-06-01)
+
+* get newest version of the tools
+    * nodejs - `v6.10.3`
+    * npm - `5.0.1`
+    * bower - `1.8.0`
+
 ## 1.3.6 (2017-03-09)
 
 * added `jq` in version `1.3`
