@@ -17,10 +17,10 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * php - `5.5.33`
 * composer - `1.3.2`
 * envtpl - `0.5.0`
-* nodejs - `v4.7.3`
-* npm - `3.10.10`
+* nodejs - `v6.10.3`
+* npm - `5.0.1`
 * grunt - `v1.2.0`
-* bower - `1.7.9`
+* bower - `1.8.0`
 * java - `1.8.0_111`
 * maven - `3.0.5`
 * ruby - `2.0.0p384`
