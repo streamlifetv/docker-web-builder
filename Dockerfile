@@ -24,13 +24,14 @@ RUN apt-add-repository -y ppa:ondrej/php && apt-get update -qq && \
 RUN pip install --no-input -q envtpl
 
 # install nodejs and npm
-RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \
     apt-get update -qq && \
-    apt-get install -qqy --no-install-recommends nodejs libfontconfig
+    apt-get install -qqy --no-install-recommends nodejs libfontconfig && \
+    #needs to be in this run call, otherwise has an error
+    npm install npm@5 -g
 
-# update npm and install grunt and bower
-RUN npm install npm@3.10.10 -g && \
-    npm install grunt-cli -g && \
+# install grunt, bower and gulp
+RUN npm install grunt-cli -g && \
     npm install bower -g && \
     npm install gulp -g
 
