@@ -39,11 +39,16 @@ ENV PATH $PATH:/usr/lib/sonar-scanner-2.6.1/bin
 # install jq (commandline JSON processor)
 RUN apt-get install -qqy --no-install-recommends jq
 
-# install Flex SDK for Flash builds
+# install Flex SDK and Flexunit for Flash builds
 RUN wget http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip && \
     mkdir -p /usr/lib/flex_sdk_4.6 && \
     unzip -d /usr/lib/flex_sdk_4.6 flex_sdk_4.6.zip && \
-    rm flex_sdk_4.6.zip
+    rm flex_sdk_4.6.zip && \
+    wget http://www-eu.apache.org/dist/flex/flexunit/4.2.0/apache-flex-flexunit-4.2.0-4.12.0-src.zip && \
+    mkdir -p /usr/lib/flex_unit_cc && \
+    unzip -d /usr/lib/flex_unit_cc apache-flex-flexunit-4.2.0-4.12.0-src.zip && \
+    rm apache-flex-flexunit-4.2.0-4.12.0-src.zip
+
 
 # install nodejs and npm
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \

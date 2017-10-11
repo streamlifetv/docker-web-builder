@@ -1,3 +1,7 @@
+## 1.3.9 (2017-10-11)
+
+* added Flex SDK and Flex Unit
+
 ## 1.3.8 (2017-10-11)
 
 * added `yarn` in version `1.2.0`
