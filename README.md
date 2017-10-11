@@ -11,7 +11,7 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * [grunt](http://gruntjs.com/) - JavaScript task runner
 * [bower](http://bower.io/) - a package manager for the web
 * openjdk8 and [maven](https://maven.apache.org/) to build Java projects
-* [ruby](http://www.ruby-lang.org/) and [sass](http://sass-lang.com/) gem
+* [yarn](https://yarnpkg.com/) - Fast, reliable, and secure dependency management
 
 ## build tools versions
 * php - `5.5.33`
@@ -24,11 +24,11 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * java - `1.8.0_111`
 * maven - `3.0.5`
 * ruby - `2.0.0p384`
-* sass - `3.4.23`
 * sonar-scanner - `2.6.1`
 * gulp - `3.9.1`
 * ant - `1.9.3`
 * jq - `1.3`
+* yarn - `1.2.0`
 
 ## docker in docker
 The image is also based on `dind` so you can build docker images and add them to the local codeship docker repository.

@@ -1,3 +1,8 @@
+## 1.3.8 (2017-10-11)
+
+* added `yarn` in version `1.2.0`
+* removed `ruby` and `sass` due to build errors
+
 ## 1.3.7 (2017-06-01)
 
 * get newest version of the tools
