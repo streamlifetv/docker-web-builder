@@ -23,7 +23,6 @@ We at [Bitmovin](https://bitmovin.com) use this Docker image to run our builds w
 * bower - `1.8.0`
 * java - `1.8.0_111`
 * maven - `3.0.5`
-* ruby - `2.0.0p384`
 * sonar-scanner - `2.6.1`
 * gulp - `3.9.1`
 * ant - `1.9.3`
