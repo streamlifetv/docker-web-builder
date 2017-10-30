@@ -63,6 +63,10 @@ RUN npm install grunt-cli -g && \
     npm install gulp -g && \
     npm install yarn -g
 
+# install prerequisites for canvas
+
+RUN apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

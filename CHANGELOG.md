@@ -1,3 +1,7 @@
+## 1.3.10 (2017-10-30)
+
+* Add support for ABR Tests, by installing packages required for running canvas inside node.js
+
 ## 1.3.9 (2017-10-11)
 
 * added Flex SDK and Flex Unit
