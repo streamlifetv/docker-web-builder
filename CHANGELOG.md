@@ -1,11 +1,10 @@
-## 1.3.9 (2017-10-11)
+## 1.3.10 (2017-10-31)
 
-* added Flex SDK and Flex Unit
+* added packages to be able to install the npm package canvas
 
-## 1.3.8 (2017-10-11)
+## 1.3.8/1.3.9
 
-* added `yarn` in version `1.2.0`
-* removed `ruby` and `sass` due to build errors
+* Versions omitted
 
 ## 1.3.7 (2017-06-01)
 
