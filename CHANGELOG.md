@@ -1,3 +1,11 @@
+## 1.3.10 (2017-10-31)
+
+* added packages to be able to install the npm package canvas
+
+## 1.3.8/1.3.9
+
+* Versions omitted
+
 ## 1.3.7 (2017-06-01)
 
 * get newest version of the tools

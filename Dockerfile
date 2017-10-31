@@ -42,6 +42,7 @@ RUN add-apt-repository -y ppa:openjdk-r/ppa && \
     update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # install Ruby 2.0 and SASS for grunt-contrib-sass
+RUN apt-get -y install ruby-all-dev
 RUN apt-get install -qqy ruby2.0 && \
     cp /usr/bin/ruby2.0 /usr/bin/ruby && \
     gem install sass
@@ -55,6 +56,9 @@ ENV PATH $PATH:/usr/lib/sonar-scanner-2.6.1/bin
 
 # install jq (commandline JSON processor)
 RUN apt-get install -qqy --no-install-recommends jq
+
+# install packages for npm canvas module
+RUN apt-get -y install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
 
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
