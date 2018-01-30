@@ -12,7 +12,8 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 # install build basics
 RUN apt-get update -qq && \
     apt-get upgrade -qqy && \
-    apt-get install -qqy --no-install-recommends build-essential software-properties-common python-pip curl wget git libxss1
+    apt-get install -qqy --no-install-recommends build-essential software-properties-common python-pip curl wget git openssh-client
+    
 
 # install php5 and composer
 RUN apt-add-repository -y ppa:ondrej/php && apt-get update -qq && \
@@ -42,7 +43,7 @@ RUN add-apt-repository -y ppa:openjdk-r/ppa && \
     update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # install Ruby 2.0 and SASS for grunt-contrib-sass
-RUN apt-get install -qqy ruby2.0 && \
+RUN apt-get install -qqy ruby2.0 ruby2.0-dev && \
     cp /usr/bin/ruby2.0 /usr/bin/ruby && \
     gem install sass
 
@@ -55,6 +56,11 @@ ENV PATH $PATH:/usr/lib/sonar-scanner-2.6.1/bin
 
 # install jq (commandline JSON processor)
 RUN apt-get install -qqy --no-install-recommends jq
+
+# chrome
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' && \
+    apt-get update && apt-get -qqy --no-install-recommends install google-chrome-stable
 
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
