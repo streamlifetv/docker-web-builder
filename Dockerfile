@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 # install build basics
 RUN apt-get update -qq && \
     apt-get upgrade -qqy && \
-    apt-get install -qqy --no-install-recommends build-essential software-properties-common python-pip curl wget git libxss1 openssh-client
+    apt-get install -qqy --no-install-recommends build-essential g++ software-properties-common python-pip curl wget git openssh-client pkg-config jq libjpeg-dev libcairo2-dev libgif-dev libpango1.0-dev
 
 # install php5 and composer
 RUN apt-add-repository -y ppa:ondrej/php && apt-get update -qq && \
@@ -67,6 +67,11 @@ ENV FLEX_HOME /opt/flexsdk
 RUN wget -O /tmp/player_globals.zip https://github.com/nexussays/playerglobal/archive/master.zip && \    
     unzip -d /tmp /tmp/player_globals.zip && \
     cp -r -f /tmp/playerglobal-master/* /opt/flexsdk/frameworks/libs/player
+
+# fix permissions
+RUN find ${FLEX_HOME} -type f -exec chmod 0644 '{}' ';' && \
+    find ${FLEX_HOME}/bin -type f -exec chmod 0755 '{}' ';' && \
+    find ${FLEX_HOME} -type d -exec chmod 0755 '{}' ';'
 
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
