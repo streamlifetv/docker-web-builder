@@ -1,5 +1,5 @@
 app:
   build:
-    image: bitmovin/web-builder:1.3.10
+    image: bitmovin/web-builder:1.3.11
     dockerfile_path: Dockerfile
   add_docker: true

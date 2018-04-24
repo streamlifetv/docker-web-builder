@@ -42,8 +42,7 @@ RUN add-apt-repository -y ppa:openjdk-r/ppa && \
     update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # install Ruby 2.0 and SASS for grunt-contrib-sass
-RUN apt-get -y install ruby-all-dev
-RUN apt-get install -qqy ruby2.0 && \
+RUN apt-get install -qqy ruby2.0 ruby2.0-dev && \
     cp /usr/bin/ruby2.0 /usr/bin/ruby && \
     gem install sass
 
@@ -57,8 +56,22 @@ ENV PATH $PATH:/usr/lib/sonar-scanner-2.6.1/bin
 # install jq (commandline JSON processor)
 RUN apt-get install -qqy --no-install-recommends jq
 
-# install packages for npm canvas module
-RUN apt-get -y install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+# install flex sdk
+RUN wget -O /tmp/flex_sdk_4.6.zip http://download.macromedia.com/pub/flex/sdk/flex_sdk_4.6.zip && \
+    mkdir /opt/flexsdk && \
+    unzip -d /opt/flexsdk /tmp/flex_sdk_4.6.zip
+ENV PATH $PATH:/opt/flexsdk/bin
+ENV FLEX_HOME /opt/flexsdk
+
+# override player_globals
+RUN wget -O /tmp/player_globals.zip https://github.com/nexussays/playerglobal/archive/master.zip && \    
+    unzip -d /tmp /tmp/player_globals.zip && \
+    cp -r -f /tmp/playerglobal-master/* /opt/flexsdk/frameworks/libs/player
+
+# fix permissions
+RUN find ${FLEX_HOME} -type f -exec chmod 0644 '{}' ';' && \
+    find ${FLEX_HOME}/bin -type f -exec chmod 0755 '{}' ';' && \
+    find ${FLEX_HOME} -type d -exec chmod 0755 '{}' ';'
 
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
