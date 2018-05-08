@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND="noninteractive" \
 # install build basics
 RUN apt-get update -qq && \
     apt-get upgrade -qqy && \
-    apt-get install -qqy --no-install-recommends build-essential g++ software-properties-common python-pip curl wget git openssh-client pkg-config jq libjpeg-dev libcairo2-dev libgif-dev libpango1.0-dev
+    apt-get install -qqy --no-install-recommends build-essential software-properties-common python-pip curl wget git
 
 # install php5 and composer
 RUN apt-add-repository -y ppa:ondrej/php && apt-get update -qq && \
