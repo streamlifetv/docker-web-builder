@@ -9,10 +9,14 @@ ENV DEBIAN_FRONTEND="noninteractive" \
     LANGUAGE="en_US:en" \
     LANG="en_US.UTF-8"
 
+# old ubuntu needs tending ....
+RUN echo "deb http://repo.mysql.com/apt/ubuntu/ trusty mysql-5.7" > /etc/apt/sources.list.d/mysql.list && \
+    apt-key adv --keyserver pgp.mit.edu --recv-keys 5072E1F5
+
 # install build basics
 RUN apt-get update -qq && \
     apt-get upgrade -qqy && \
-    apt-get install -qqy --no-install-recommends build-essential software-properties-common python-pip curl wget git mysql-client openssh-client
+    apt-get install -qqy --no-install-recommends build-essential software-properties-common python-pip curl wget git openssh-client mysql-client
 
 # install php5 and composer
 RUN apt-add-repository -y ppa:ondrej/php && apt-get update -qq && \
