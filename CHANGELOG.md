@@ -1,3 +1,9 @@
+## 1.3.14
+
+* added mysql-client package
+
+## 1.3.12
+* added npm 5.8 (npm ci support)
 ## 1.3.10 (2017-10-31)
 
 * added packages to be able to install the npm package canvas
