@@ -77,6 +77,10 @@ RUN find ${FLEX_HOME} -type f -exec chmod 0644 '{}' ';' && \
     find ${FLEX_HOME}/bin -type f -exec chmod 0755 '{}' ';' && \
     find ${FLEX_HOME} -type d -exec chmod 0755 '{}' ';'
 
+# install cloudsql proxy
+ADD https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 /usr/local/bin/cloud_sql_proxy
+RUN chmod a+x /usr/local/bin/cloud_sql_proxy
+
 # APT cleanup
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
